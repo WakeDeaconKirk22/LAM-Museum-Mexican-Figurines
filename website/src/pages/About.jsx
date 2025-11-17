@@ -10,10 +10,7 @@ export default function About() {
         and the model architecture used. You can explain the dataset, accuracy,
         and key learnings here.
       </p>
-      <Link
-        to="/"
-        className="mt-6 text-emerald-500 hover:text-emerald-400 underline"
-      >
+      
         <div className="max-w-2xl mb-8 p-6 border rounded-lg shadow-md">
         <h2 className="text-2xl font-semibold mb-2">Our Problem:</h2>
           <p className="mb-2">
