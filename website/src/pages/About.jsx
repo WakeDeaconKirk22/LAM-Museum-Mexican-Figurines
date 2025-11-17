@@ -33,6 +33,7 @@ export default function About() {
               Our goal is that we want to correctly repatriate these figurines, without costing the LAM Museum time, money, and effort. 
           </p>
         </div>
+      <Link to="/" className="Home">
         ← Back to Home
       </Link>
     </div>
