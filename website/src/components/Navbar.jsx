@@ -14,19 +14,19 @@ export default function Navbar() {
         to="/about"
         className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 rounded-xl"
       >
-        About
+               About
       </Link>
       <Link
         to="/regional"
         className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 rounded-xl"
       >
-        Regional Info
+               Regional Info
       </Link>
       <Link
         to="/contact"
         className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 rounded-xl"
       >
-        Contact Us
+               Contact Us
       </Link>
     </nav>
   );
