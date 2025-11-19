@@ -11,7 +11,7 @@ export default function Home() {
         </h1>
 
         <p className="text-center mb-8 text-neutral-700">
-          This tool lets you upload a CSV file of digit data and have it classified
+          HELLOThis tool lets you upload a CSV file of digit data and have it classified
           by our trained model. Use it to test predictions, explore model behavior,
           and experiment with different inputs.
         </p>
