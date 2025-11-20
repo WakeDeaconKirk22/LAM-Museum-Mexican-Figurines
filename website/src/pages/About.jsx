@@ -5,11 +5,6 @@ export default function About() {
   return (
     <div className="flex flex-col items-center justify-center min-h-[80vh]">
       <h1 className="text-3xl font-bold mb-4">About This Project</h1>
-      <p className="max-w-xl text-center">
-        This page will describe how the Digit CSV Classifier works, its goals,
-        and the model architecture used. You can explain the dataset, accuracy,
-        and key learnings here.
-      </p>
       
         <div className="max-w-2xl mb-8 p-6 border rounded-lg shadow-md">
         <h2 className="text-2xl font-semibold mb-2">Our Problem:</h2>

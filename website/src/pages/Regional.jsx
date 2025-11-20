@@ -5,11 +5,7 @@ export default function Regional() {
   return (
     <div className="flex flex-col items-center justify-center min-h-[80vh]">
       <h1 className="text-3xl font-bold mb-4">Regional Information</h1>
-      <p className="max-w-xl text-center">
-        This section can include visualizations or regional performance metrics
-        for your model. For instance, how accuracy differs across datasets.
-      </p>
-
+      
       {/* Colima */}
       <div className="max-w-2xl mb-8 p-6 border rounded-lg shadow-md">
         <h2 className="text-2xl font-semibold mb-2">Colima</h2>
