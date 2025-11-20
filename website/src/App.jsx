@@ -12,13 +12,15 @@ export default function App() {
     <Router>
       <div className="min-h-screen bg-neutral-950 text-neutral-100">
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/regional" element={<Regional />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/classifier" element={<Classifier />} />
-        </Routes>
+        <div className="max-w-5xl mx-auto px-4 py-8">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/regional" element={<Regional />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/classifier" element={<Classifier />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );
