@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Regional() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[80vh]">
+    <div className="flex flex-col items-center justify-center min-h-[80vh] px-4">
       <h1 className="text-3xl font-bold mb-4">Regional Information</h1>
       
       {/* Colima */}

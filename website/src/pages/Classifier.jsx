@@ -22,7 +22,7 @@ export default function Classifier() {
   }
 
   return (
-    <div className="min-h-[80vh] flex flex-col items-center justify-center px-4">
+    <div className="flex flex-col items-center justify-center min-h-[80vh] px-4">
       <div className="w-full max-w-xl bg-neutral-900 p-8 rounded-xl shadow-lg">
         <h1 className="text-3xl font-bold mb-6 text-center">Artifact Classifier</h1>
 

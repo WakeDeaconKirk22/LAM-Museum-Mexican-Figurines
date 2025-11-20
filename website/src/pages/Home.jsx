@@ -3,7 +3,7 @@ import DigitCsvClassifier from "../DigitCsvClassifier";
 
 export default function Home() {
   return (
-    <div className="min-h-[80vh] flex justify-center px-4 py-12">
+    <div className="flex flex-col items-center justify-center min-h-[80vh] px-4">
       {/* Centered, max-width container so there are margins on the sides */}
       <div className="w-full max-w-3xl">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center text-neutral-900">
