@@ -54,7 +54,7 @@ export default function Regional() {
         </p>
         <h3 className="font-semibold mb-1">Characteristics</h3>
         <p>
-          Chipicuaro figurines were typically hand-carded using clay. 
+          Chipicuaro figurines were typically hand-crafted using clay. 
           The figurine’s eyes are usually small slits or dot-shaped impressions, often with minimal detailing. 
           Their noses are small, simple, and often triangular or left undefined, while Chipicuaro figurine mouths are small and usually closed or downturned. 
           The adornments these figurines have may include earrings, necklaces, and detailed hairstyles or headdresses.
