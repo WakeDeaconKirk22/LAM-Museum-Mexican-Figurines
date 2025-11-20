@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Regional from "./pages/Regional";
 import Contact from "./pages/Contact";
+import Classifier from "./pages/Classifier";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/regional" element={<Regional />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/classifier" element={<Classifier />} />
         </Routes>
       </div>
     </Router>
