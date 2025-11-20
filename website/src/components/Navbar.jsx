@@ -9,28 +9,36 @@ export default function Navbar() {
           to="/"
           className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 rounded-xl text-white"
         >
-          Home
+          Home 
         </Link>
 
         <Link
           to="/about"
           className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 rounded-xl text-white"
         >
-          About
+          About 
         </Link>
 
         <Link
           to="/regional"
           className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 rounded-xl text-white"
         >
-          Regional Info
+          Regional Information 
         </Link>
 
         <Link
           to="/contact"
           className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 rounded-xl text-white"
         >
-          Contact Us
+          Contact Us 
+        </Link>
+
+        <Link
+          to="/classifier"
+          className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 rounded-xl text-white"
+        >
+
+          Classifier 
         </Link>
       </div>
     </nav>
