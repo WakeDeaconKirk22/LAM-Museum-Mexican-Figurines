@@ -3,34 +3,54 @@ import { Link } from "react-router-dom";
 
 export default function About() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[80vh] px-4">
-      <h1 className="text-3xl font-bold mb-4">About This Project</h1>
-      
-        <div className="max-w-2xl mb-8 p-6 border rounded-lg shadow-md">
-        <h2 className="text-2xl font-semibold mb-2">Our Problem:</h2>
-          <p className="mb-2">
-            The LAM Museum at Wake Forest University is currently is currently in possession of 400 clay human figurines that they would 
-            like to repatriate to Mexico. However, there is no known provenance for any of the figurines or any documentation of each 
-            artifact’s traits. The Lam Museum does not have any system in place to accurately identify or classify any of the artifacts. 
-            Manual classification is labor-intensive and requires specialized expertise and is further complicated by the subjective nature 
-            of traditional archaeological categorization, which lacks well-defined, quantitative criteria. Currently, they do not have the 
-            staff or time available to build its own system. If they were to make time to do this, other essential managing activities for 
-            the museum would have to be halted, causing major issues. Students and staff also cannot efficiently sort through the collection 
-            to determine where these figurines belong. Furthermore, analyzing the details of so many artifacts by hand would be time-consuming 
-            and may lead to mistakes, which would decrease public and educational engagement. A seasoned expert in the field is also required 
-            for identification, and it is neither cost-effective nor timely to acquire one. 
+    <div className="relative min-h-screen px-6 py-24 flex flex-col items-center">
+
+      {/* Ambient blurred background */}
+      <div className="absolute inset-0 -z-10 bg-black">
+        <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-black to-black blur-[140px] opacity-40" />
+      </div>
+
+      {/* Title */}
+      <div className="text-center max-w-3xl">
+        <h1 className="text-5xl md:text-6xl font-light tracking-tight mb-6">
+          About This Project
+        </h1>
+        <p className="text-stone-400 text-lg max-w-xl mx-auto">
+          Understanding the story behind the artifacts—powered by AI and modern curation tools.
+        </p>
+      </div>
+
+      {/* Content Cards */}
+      <div className="mt-16 max-w-3xl w-full space-y-10">
+
+        <div className="backdrop-blur-xl bg-white/5 border border-white/10 p-8 rounded-3xl shadow-lg transition hover:bg-white/10">
+          <h2 className="text-3xl font-light mb-4">Our Problem</h2>
+          <p className="text-stone-300 leading-relaxed">
+            The LAM Museum at Wake Forest University holds 400 clay human figurines lacking provenance 
+            or detailed documentation. Manual classification is slow, expert-dependent, and subjective. 
+            This project builds a modern assistive system so museum staff and students can rapidly and 
+            consistently identify and manage the collection.
           </p>
         </div>
 
-        <div className="max-w-2xl mb-8 p-6 border rounded-lg shadow-md">
-        <h2 className="text-2xl font-semibold mb-2">Our Goal and Algorithm:</h2>
-          <p className="mb-2">
-              Our goal is that we want to correctly repatriate these figurines, without costing the LAM Museum time, money, and effort. 
+        <div className="backdrop-blur-xl bg-white/5 border border-white/10 p-8 rounded-3xl shadow-lg transition hover:bg-white/10">
+          <h2 className="text-3xl font-light mb-4">Our Goal</h2>
+          <p className="text-stone-300 leading-relaxed">
+            Our aim is to enable efficient repatriation and curation without demanding additional cost 
+            or staff time. We combine domain-informed trait labeling with machine learning to create 
+            a powerful, accessible classification tool for both experts and learners.
           </p>
         </div>
-      <Link to="/" className="Home">
-        ← Back to Home
-      </Link>
+
+        <div className="text-center pt-4">
+          <Link 
+            to="/" 
+            className="text-amber-400 hover:text-amber-300 transition underline text-lg"
+          >
+            ← Back to Home
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

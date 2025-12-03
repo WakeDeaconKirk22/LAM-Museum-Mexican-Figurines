@@ -1,70 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* FIX SVG OVERSIZING */
+svg:not([data-fullscreen]) {
+  width: 1em;
+  height: 1em;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+/* Root variables */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --bg-900: #0b0a09;
+  --muted: #9ca3af;
+  --amber-500: #f59e0b;
+  --accent-from: #f59e0b;
+  --accent-to: #ef4444;
+  --glass: rgba(255,255,255,0.03);
+  color-scheme: dark;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+/* Body baseline */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background: radial-gradient(circle at top center, #1a140c 0%, #0b0a09 60%, #060505 100%);
+  color: var(--muted);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+
+/* Fade-in animations */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-a:hover {
-  color: #535bf2;
+.animate-fade-in {
+  animation: fade-in-up 560ms cubic-bezier(.16,.84,.44,1) both;
+}
+.animate-fade-in-delay {
+  animation: fade-in-up 560ms 180ms cubic-bezier(.16,.84,.44,1) both;
 }
 
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
+/* Text glow */
+.text-shadow-glow {
+  text-shadow: 0 6px 30px rgba(245,158,11,0.09), 0 2px 8px rgba(0,0,0,0.6);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Card helper */
+.card {
+  background-color: rgba(15,14,13,0.6);
+  border: 1px solid rgba(31,30,29,0.4);
+  border-radius: 2rem;
+  padding: 1.5rem;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+/* Fancy button utilities */
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: all 0.2s ease-in-out;
 }
-button:hover {
-  border-color: #646cff;
+.btn-accent-strong {
+  background: linear-gradient(to right, #f59e0b, #f97316);
+  color: #1f1f1f;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.btn-accent-strong:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(250,160,50,0.12);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* Small utilities */
+.section-divider {
+  height: 1px;
+  width: 100%;
+  margin: 3.5rem 0;
+  background: linear-gradient(to right, transparent, rgba(31,30,29,1), transparent);
+}
+
+/* Reduce motion for users who requested it */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-fade-in-delay,
+  .btn-accent {
+    animation: none !important;
+    transition: none !important;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+}
+
+/* Radio styling */
+.input-radio {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--amber-500);
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
   }
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
