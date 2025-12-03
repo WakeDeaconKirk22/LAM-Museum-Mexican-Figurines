@@ -150,8 +150,9 @@ export default function Classifier() {
     <div className="min-h-[80vh] flex flex-col items-center">
       <div className="w-full max-w-6xl bg-stone-900 rounded-2xl p-8 shadow-xl">
         <h1 className="text-2xl md:text-3xl font-bold text-center mb-4 animate-fade-in">Artifact Classifier</h1>
-
-        <hr className="border-t border-stone-600 w-full max-w-2xl my-6" />
+        <div className="text-center max-w-3xl animate-fade-in"><p className="text-stone-400 text-lg max-w-xl mx-auto">
+          FIX ME: Put instructions here.
+        </p></div>
 
         {error && <div className="text-center text-red-400 mb-4">{error}</div>}
         {success && <div className="text-center text-emerald-400 mb-4">{success}</div>}
@@ -220,10 +221,6 @@ export default function Classifier() {
               <div className="text-center">
                 <h3 className="font-semibold">Output Vector</h3>
                 <div className="mt-2 p-3 rounded-lg text-sm break-all">[{values.map((v) => (v === null ? "_" : v)).join(", ")}]</div>
-              </div>
-
-              <div className="text-center">
-                <Link to="/" className="text-amber-400 hover:text-amber-300 underline">← Back to Home</Link>
               </div>
             </div>
           </div>

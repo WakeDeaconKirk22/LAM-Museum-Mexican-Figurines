@@ -23,8 +23,6 @@ export default function About() {
         </p>
       </div>
 
-      <hr className="border-t border-stone-600 w-full max-w-2xl my-6" />
-
       {/* Content Cards */}
       <div className="mt-20 max-w-3xl w-full space-y-12">
 

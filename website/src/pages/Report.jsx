@@ -2,14 +2,12 @@ export default function Report() {
     return (
       <div className="min-h-screen px-6 md:px-12 lg:px-24 py-16 space-y-16">
         {/* HEADER */}
-        <header className="text-center space-y-4">
-          <h1 className="text-4xl font-serif font-bold text-stone-100">
-            Classification Report
-          </h1>
-          <p className="text-stone-400 max-w-2xl mx-auto">
-            View regional attribution and confidence scores.
-          </p>
-        </header>
+        <div className="text-center mb-12 animate-fade-in">
+        <h1 className="text-4xl font-bold">Classification Report</h1>
+        <p className="text-stone-400 max-w-2xl mx-auto mt-2">
+          View regional attribution and confidence scores.
+        </p>
+      </div>
   
         {/* RESULTS TABLE */}
         <section className="space-y-6">

@@ -6,7 +6,7 @@ import Regional from "./pages/Regional";
 import Contact from "./pages/Contact";
 import Classifier from "./pages/Classifier";
 import Report from "./pages/Report";
-import Home from "./pages/Home";
+import Home from "./pages/Classifier";
 
 export default function App() {
   return (
@@ -19,7 +19,7 @@ export default function App() {
 
         <main className="max-w-6xl mx-auto px-4 py-10 text-center">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Classifier />} />
             <Route path="/classifier" element={<Classifier />} />
             <Route path="/about" element={<About />} />
             <Route path="/regional" element={<Regional />} />
