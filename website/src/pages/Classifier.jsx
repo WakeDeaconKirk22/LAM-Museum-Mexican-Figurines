@@ -149,7 +149,7 @@ export default function Classifier() {
   return (
     <div className="min-h-[80vh] flex flex-col items-center">
       <div className="w-full max-w-6xl bg-stone-900 rounded-2xl p-8 shadow-xl">
-        <h1 className="text-2xl md:text-3xl font-bold text-center mb-4">Artifact Classifier</h1>
+        <h1 className="text-2xl md:text-3xl font-bold text-center mb-4 animate-fade-in">Artifact Classifier</h1>
 
         <hr className="border-t border-stone-600 w-full max-w-2xl my-6" />
 

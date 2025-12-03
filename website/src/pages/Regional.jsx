@@ -43,7 +43,7 @@ export default function Regional() {
 
   return (
     <div className="space-y-24 px-6 md:px-12 lg:px-24 py-12">
-      <div className="text-center mb-12">
+      <div className="text-center mb-12 animate-fade-in">
         <h1 className="text-4xl font-bold">Regional Information</h1>
         <p className="text-stone-400 max-w-2xl mx-auto mt-2">
           Explore the main Mesoamerican regions and their unique ceramic figurine styles.
