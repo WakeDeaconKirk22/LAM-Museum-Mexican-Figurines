@@ -28,13 +28,13 @@ export default function App() {
           </Routes>
         </main>
 
-        <footer className="mt-12 border-t border-stone-800/40">
-          <div className="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <footer className="w-full mt-16 border-t border-stone-800/40 bg-stone-900">
+          <div className="max-w-6xl mx-auto px-4 pt-8 pb-12 flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="text-sm text-stone-400">
-              © {new Date().getFullYear()} LAM Museum — Artifact Classifier
+              LAM Museum — Artifact Classifier
             </div>
             <div className="text-sm text-stone-500">
-              Built for research & education · <span className="font-medium text-amber-400">Non-commercial</span>
+              Built for Research & Education · <span className="font-medium text-amber-400">Non-Commercial</span>
             </div>
           </div>
         </footer>

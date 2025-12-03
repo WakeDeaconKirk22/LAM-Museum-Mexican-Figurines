@@ -148,8 +148,10 @@ export default function Classifier() {
 
   return (
     <div className="min-h-[80vh] flex flex-col items-center">
-      <div className="w-full max-w-6xl bg-stone-900/60 border border-stone-800/40 rounded-2xl p-8 shadow-xl">
+      <div className="w-full max-w-6xl bg-stone-900 rounded-2xl p-8 shadow-xl">
         <h1 className="text-2xl md:text-3xl font-bold text-center mb-4">Artifact Classifier</h1>
+
+        <hr className="border-t border-stone-600 w-full max-w-2xl my-6" />
 
         {error && <div className="text-center text-red-400 mb-4">{error}</div>}
         {success && <div className="text-center text-emerald-400 mb-4">{success}</div>}
@@ -157,7 +159,7 @@ export default function Classifier() {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Left - image */}
           <div className="lg:w-2/5 w-full flex flex-col items-center">
-            <div className="w-full border border-stone-700 rounded-xl overflow-hidden bg-black/40">
+            <div className="w-full rounded-xl overflow-hidden bg-black">
               {currentImage ? (
                 <img src={currentImage.url} alt={`${currentImage.region} figurine`} className="w-full h-[360px] object-contain" />
               ) : (
@@ -173,12 +175,12 @@ export default function Classifier() {
               </p>
             )}
 
-            <div className="mt-4 w-full flex flex-col items-center gap-3">
-              <button onClick={handleNewRandomImage} disabled={submitting} className="w-full md:w-auto px-4 py-2 rounded-lg border border-neutral-600 hover:bg-neutral-800 transition">
+            <div className="mt-4 w-full items-center gap-6">
+              <button onClick={handleNewRandomImage} disabled={submitting} className="px-4 py-2 rounded-lg border border-neutral-600 bg-amber-500 text-stone-900 font-semibold hover:scale-105 transition disabled:opacity-60">
                 New Random Image
               </button>
 
-              <button onClick={handleSubmit} disabled={submitting || !currentImage} className="w-full md:w-auto px-4 py-2 rounded-lg bg-amber-500 text-stone-900 font-semibold hover:scale-105 transition disabled:opacity-60">
+              <button onClick={handleSubmit} disabled={submitting || !currentImage} className="px-4 py-2 rounded-lg border border-neutral-600 bg-amber-500 text-stone-900 font-semibold hover:scale-105 transition disabled:opacity-60">
                 {submitting ? "Submitting..." : "Submit Labels"}
               </button>
             </div>
@@ -195,8 +197,8 @@ export default function Classifier() {
                     {section.traits.map((trait) => {
                       const i = traitCounter++;
                       return (
-                        <div key={i} className="flex items-center justify-between bg-neutral-800 p-3 rounded-lg">
-                          <div className="w-3/5 font-medium text-sm">{trait}</div>
+                        <div key={i} className="flex items-center justify-center p-2 rounded-lg">
+                          <div className="w-1/5 font-medium text-sm text-left">{trait}</div>
                           <div className="flex items-center gap-4">
                             <label className="flex items-center space-x-2">
                               <input className="input-radio" type="radio" name={`trait-${i}`} checked={values[i] === 1} onChange={() => updateValue(i, 1)} />
@@ -217,7 +219,7 @@ export default function Classifier() {
 
               <div className="text-center">
                 <h3 className="font-semibold">Output Vector</h3>
-                <div className="mt-2 bg-neutral-800 p-3 rounded-lg text-sm break-all">[{values.map((v) => (v === null ? "_" : v)).join(", ")}]</div>
+                <div className="mt-2 p-3 rounded-lg text-sm break-all">[{values.map((v) => (v === null ? "_" : v)).join(", ")}]</div>
               </div>
 
               <div className="text-center">

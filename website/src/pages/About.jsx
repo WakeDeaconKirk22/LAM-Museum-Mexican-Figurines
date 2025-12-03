@@ -23,9 +23,12 @@ export default function About() {
         </p>
       </div>
 
+      <hr className="border-t border-stone-600 w-full max-w-2xl my-6" />
+
       {/* Content Cards */}
       <div className="mt-20 max-w-3xl w-full space-y-12">
 
+<<<<<<< HEAD
         {/* --- CARD 1 --- */}
         <div className="card card-glow gradient-border hover-lift p-10 animate-fade-in">
           <h2 className="text-3xl font-light mb-4 text-amber-300">Our Problem</h2>
@@ -46,6 +49,24 @@ export default function About() {
             additional cost or staff time. We combine domain-informed trait labeling 
             with machine learning to create a powerful, accessible classification tool 
             for both experts and learners.
+=======
+        <div className="backdrop-blur-xl bg-white/5 transition hover:bg-white/10">
+          <h2 className="text-3xl font-light mb-4">Our Problem</h2>
+          <p className="text-left text-stone-300 leading-relaxed">
+            The LAM Museum at Wake Forest University holds 400+ clay human figurines lacking provenance 
+            or detailed documentation. Manual classification is slow, expert-dependent, and subjective. 
+            This project builds a modern assistive system so museum staff and students can rapidly and 
+            consistently identify and manage the collection.
+          </p>
+        </div>
+
+        <div className="backdrop-blur-xl bg-white/5 transition hover:bg-white/10">
+          <h2 className="text-3xl font-light mb-4">Our Goal</h2>
+          <p className="text-left text-stone-300 leading-relaxed">
+            Our aim is to enable efficient repatriation and curation without demanding additional cost 
+            or staff time. We combine domain-informed trait labeling with machine learning to create 
+            a powerful, accessible classification tool for both experts and learners.
+>>>>>>> fe264d3c17524697cb84b32371ada04e025ac372
           </p>
         </div>
 
