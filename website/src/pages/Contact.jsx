@@ -30,7 +30,7 @@ export default function Contact() {
   return (
     <div className="space-y-24 px-6 md:px-12 lg:px-24 py-12 flex flex-col items-center">
       
-      <div className="text-center max-w-3xl mb-12">
+      <div className="text-center max-w-3xl mb-12 animate-fade-in">
         <h1 className="text-4xl font-bold mb-4">Contact</h1>
         <p className="text-stone-400 max-w-xl mx-auto">
           Have questions about the figurines, the dataset, or the model? Send us a message and we&apos;ll get back to you.
