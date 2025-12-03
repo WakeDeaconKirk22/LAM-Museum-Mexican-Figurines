@@ -10,6 +10,7 @@ export default function Navbar() {
     { to: "/regional", label: "Cultures" },
     { to: "/about", label: "About" },
     { to: "/contact", label: "Contact" },
+    { to: "/report", label: "Report"}
   ];
 
   const navContainerStyle = { display: "flex", alignItems: "center", gap: "1rem" };
