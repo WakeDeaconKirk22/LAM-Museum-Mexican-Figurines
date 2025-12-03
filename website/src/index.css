@@ -137,3 +137,42 @@ svg:not([data-fullscreen]) {
   max-width: 100%;
   max-height: 100%;
 }
+
+/* ORANGE BUBBLE BUTTON STYLE */
+.nav-bubble {
+  background: rgba(245, 158, 11, 0.22); /* soft orange glass */
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  padding: 0.55rem 1.1rem;
+  border-radius: 0.85rem;
+  backdrop-filter: blur(9px);
+  transition: 200ms ease;
+  color: white !important; /* always white text */
+}
+
+/* Hover effect - brighter orange */
+.nav-bubble:hover {
+  background: rgba(245, 158, 11, 0.35);
+  border-color: rgba(245, 158, 11, 0.55);
+  transform: translateY(-2px);
+}
+
+/* Active page bubble - glowing bright orange */
+.nav-bubble-active {
+  background: rgba(245, 158, 11, 0.55);  /* brighter orange */
+  border-color: rgba(245, 158, 11, 0.85);
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.4);
+  color: white !important;
+}
+
+/* Optional: glowing text on hover */
+.nav-bubble-active:hover {
+  text-shadow: 0 0 10px rgba(255, 200, 120, 0.55);
+}
+/* REMOVE OLD UNDERLINE EFFECT FROM BUBBLE NAV LINKS */
+.nav-bubble::after,
+.nav-bubble-active::after {
+  display: none !important;
+  content: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
