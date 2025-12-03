@@ -20,22 +20,24 @@ export default function About() {
         </p>
       </div>
 
+      <hr className="border-t border-stone-600 w-full max-w-2xl my-6" />
+
       {/* Content Cards */}
       <div className="mt-16 max-w-3xl w-full space-y-10">
 
-        <div className="backdrop-blur-xl bg-white/5 border border-white/10 p-8 rounded-3xl shadow-lg transition hover:bg-white/10">
+        <div className="backdrop-blur-xl bg-white/5 transition hover:bg-white/10">
           <h2 className="text-3xl font-light mb-4">Our Problem</h2>
-          <p className="text-stone-300 leading-relaxed">
-            The LAM Museum at Wake Forest University holds 400 clay human figurines lacking provenance 
+          <p className="text-left text-stone-300 leading-relaxed">
+            The LAM Museum at Wake Forest University holds 400+ clay human figurines lacking provenance 
             or detailed documentation. Manual classification is slow, expert-dependent, and subjective. 
             This project builds a modern assistive system so museum staff and students can rapidly and 
             consistently identify and manage the collection.
           </p>
         </div>
 
-        <div className="backdrop-blur-xl bg-white/5 border border-white/10 p-8 rounded-3xl shadow-lg transition hover:bg-white/10">
+        <div className="backdrop-blur-xl bg-white/5 transition hover:bg-white/10">
           <h2 className="text-3xl font-light mb-4">Our Goal</h2>
-          <p className="text-stone-300 leading-relaxed">
+          <p className="text-left text-stone-300 leading-relaxed">
             Our aim is to enable efficient repatriation and curation without demanding additional cost 
             or staff time. We combine domain-informed trait labeling with machine learning to create 
             a powerful, accessible classification tool for both experts and learners.

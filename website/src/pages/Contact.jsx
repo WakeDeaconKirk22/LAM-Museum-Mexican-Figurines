@@ -11,8 +11,10 @@ export default function Contact() {
         Send us a message and we&apos;ll get back to you.
       </p>
 
+      <hr className="border-t border-stone-600 w-full max-w-2xl my-6" />
+
       {/* Project Manager card – same style as Colima/Nayarit/Chipicuaro */}
-      <div className="max-w-2xl mb-8 p-6 border rounded-lg shadow-md">
+      <div className="max-w-2xl mb-8 p-6">
         <h2 className="text-2xl font-semibold mb-2">Contact Us</h2>
         <p className="mb-2">
           Project Manager: Caroline Wales
@@ -23,7 +25,7 @@ export default function Contact() {
       </div>
 
       {/* LAM Museum rep card – same layout style */}
-      <div className="max-w-2xl mb-8 p-6 border rounded-lg shadow-md">
+      <div className="max-w-2xl mb-8 p-6">
         <h2 className="text-2xl font-semibold mb-2">LAM Museum Contact</h2>
         <p className="mb-2">
           LAM Museum Representative: Mackenzie Lael
