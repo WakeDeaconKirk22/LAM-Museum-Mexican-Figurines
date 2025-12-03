@@ -168,11 +168,34 @@ svg:not([data-fullscreen]) {
 .nav-bubble-active:hover {
   text-shadow: 0 0 10px rgba(255, 200, 120, 0.55);
 }
-/* REMOVE OLD UNDERLINE EFFECT FROM BUBBLE NAV LINKS */
-.nav-bubble::after,
-.nav-bubble-active::after {
-  display: none !important;
-  content: none !important;
-  width: 0 !important;
-  height: 0 !important;
+/* FINAL FIX: Remove browser underline completely */
+.nav-bubble,
+.nav-bubble:visited,
+.nav-bubble:hover,
+.nav-bubble-active,
+.nav-bubble-active:hover {
+  text-decoration: none !important;
+}
+
+/* Make the logo float slightly on hover */
+.logo-link {
+  transition: transform 0.3s ease;
+}
+
+.logo-link:hover {
+  transform: translateY(-2px);
+}
+
+/* Add subtle pulsating glow to the icon */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 191, 64, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 191, 64, 0.5);
+  }
+}
+
+.logo-icon {
+  animation: pulse-glow 2s infinite;
 }
