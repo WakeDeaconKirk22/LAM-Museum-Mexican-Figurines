@@ -16,7 +16,7 @@ export default function App() {
         {/* Grain overlay */}
         <div className="pointer-events-none fixed inset-0 opacity-5 mix-blend-overlay bg-[url('/grain.png')]"></div>
 
-        <main className="max-w-6xl mx-auto px-4 py-10">
+        <main className="max-w-6xl mx-auto px-4 py-10 text-center">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/classifier" element={<Classifier />} />

@@ -16,7 +16,7 @@ export default function About() {
           About This Project
         </h1>
         <p className="text-stone-400 text-lg max-w-xl mx-auto">
-          Understanding the story behind the artifacts—powered by AI and modern curation tools.
+          Understanding the story behind the artifacts.
         </p>
       </div>
 

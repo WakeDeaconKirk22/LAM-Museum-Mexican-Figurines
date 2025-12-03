@@ -2,8 +2,19 @@ import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const location = useLocation();
-
   const isActive = (path) => location.pathname === path;
+
+  const items = [
+    { to: "/", label: "Home" },
+    { to: "/classifier", label: "Classifier" },
+    { to: "/regional", label: "Cultures" },
+    { to: "/about", label: "About" },
+    { to: "/contact", label: "Contact" },
+  ];
+
+  // inline style for gap (guaranteed) and navLink margin fallback
+  const navContainerStyle = { display: "flex", alignItems: "center", gap: "1rem" }; // 1rem = gap-4
+  const linkStyle = { marginRight: "1rem", display: "inline-flex" };
 
   return (
     <nav className="border-b border-stone-800/50 bg-stone-950/80 backdrop-blur-sm sticky top-0 z-50">
@@ -21,26 +32,28 @@ export default function Navbar() {
             </div>
           </Link>
 
-          <div className="flex items-center gap-1">
-            {[
-              { to: "/", label: "Home" },
-              { to: "/classifier", label: "Classifier" },
-              { to: "/regional", label: "Cultures" },
-              { to: "/about", label: "About" },
-              { to: "/contact", label: "Contact" },
-            ].map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                className={`px-4 py-2 rounded-lg font-medium text-sm transition-all ${
-                  isActive(item.to)
-                    ? "text-amber-500 bg-amber-500/10 ring-1 ring-amber-500/10"
-                    : "text-stone-400 hover:text-stone-200 hover:bg-stone-800/50"
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
+          {/* FORCE spacing with inline styles */}
+          <div style={navContainerStyle}>
+            {items.map((item, idx) => {
+              const active = isActive(item.to);
+              // remove margin on last item
+              const thisLinkStyle = { ...linkStyle, marginRight: idx === items.length - 1 ? "0" : linkStyle.marginRight };
+
+              return (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  style={thisLinkStyle}
+                  className={`px-4 py-2 rounded-lg font-medium text-sm transition-all ${
+                    active
+                      ? "text-amber-500 bg-amber-500/10 ring-1 ring-amber-500/10"
+                      : "text-stone-400 hover:text-stone-200 hover:bg-stone-800/50"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>
