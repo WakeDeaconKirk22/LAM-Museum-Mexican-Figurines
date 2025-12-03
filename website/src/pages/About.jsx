@@ -3,16 +3,19 @@ import { Link } from "react-router-dom";
 
 export default function About() {
   return (
-    <div className="relative min-h-screen px-6 py-24 flex flex-col items-center">
+    <div className="relative min-h-screen px-6 py-28 flex flex-col items-center">
 
-      {/* Ambient blurred background */}
+      {/* Ambient glowing background */}
       <div className="absolute inset-0 -z-10 bg-black">
-        <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-black to-black blur-[140px] opacity-40" />
+        <div className="absolute inset-0 bg-gradient-to-b 
+          from-amber-500/5 via-red-500/5 to-black 
+          blur-[160px] opacity-40" 
+        />
       </div>
 
       {/* Title */}
-      <div className="text-center max-w-3xl">
-        <h1 className="text-5xl md:text-6xl font-light tracking-tight mb-6">
+      <div className="text-center max-w-3xl animate-fade-in">
+        <h1 className="text-5xl md:text-6xl font-light tracking-tight mb-6 glow-text text-amber-300">
           About This Project
         </h1>
         <p className="text-stone-400 text-lg max-w-xl mx-auto">
@@ -23,7 +26,7 @@ export default function About() {
       <hr className="border-t border-stone-600 w-full max-w-2xl my-6" />
 
       {/* Content Cards */}
-      <div className="mt-16 max-w-3xl w-full space-y-10">
+      <div className="mt-20 max-w-3xl w-full space-y-12">
 
         <div className="backdrop-blur-xl bg-white/5 transition hover:bg-white/10">
           <h2 className="text-3xl font-light mb-4">Our Problem</h2>
@@ -44,9 +47,10 @@ export default function About() {
           </p>
         </div>
 
+        {/* Back link */}
         <div className="text-center pt-4">
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className="text-amber-400 hover:text-amber-300 transition underline text-lg"
           >
             ← Back to Home

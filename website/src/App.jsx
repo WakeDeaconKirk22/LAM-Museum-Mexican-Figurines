@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Regional from "./pages/Regional";
 import Contact from "./pages/Contact";
 import Classifier from "./pages/Classifier";
+import Report from "./pages/Report";
 import Home from "./pages/Home";
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
             <Route path="/classifier" element={<Classifier />} />
             <Route path="/about" element={<About />} />
             <Route path="/regional" element={<Regional />} />
+            <Route path="/report" element={<Report />} />   {/* <-- fixed route */}
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
