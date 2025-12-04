@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-// image imports unchanged...
+// Image imports
 const chupicuaroImports = import.meta.glob(
   "../assets/Chupicuaro/*.{png,jpg,jpeg,JPG,JPEG}",
   { eager: true, as: "url" }
@@ -79,18 +79,18 @@ export default function Classifier() {
   const allTraits = traitSections.flatMap((s) => s.traits);
   const [values, setValues] = useState(Array(allTraits.length).fill(null));
 
-  function updateValue(index, val) {
-    const updated = [...values];
-    updated[index] = val;
-    setValues(updated);
-  }
-
   const [currentImage, setCurrentImage] = useState(() => getRandomImage());
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
   const resetAnswers = () => setValues(Array(allTraits.length).fill(null));
+
+  const updateValue = (index, val) => {
+    const updated = [...values];
+    updated[index] = val;
+    setValues(updated);
+  };
 
   const handleNewRandomImage = () => {
     setError("");
@@ -107,8 +107,9 @@ export default function Classifier() {
     setSuccess("");
 
     if (!currentImage) {
-      setError("No image loaded.");
-      alert("No image loaded.");
+      const msg = "No image loaded.";
+      setError(msg);
+      alert(msg);
       return;
     }
 
@@ -144,15 +145,33 @@ export default function Classifier() {
     }
   };
 
+  const handleRunCluster = async () => {
+    setSubmitting(true);
+    setError("");
+    setSuccess("");
+    try {
+      const res = await fetch("http://127.0.0.1:5000/api/run-cluster", { method: "POST" });
+      const data = await res.json();
+      if (!res.ok || !data.success) throw new Error(data.error || "Failed to run clustering");
+      setSuccess("Clustering script ran successfully!");
+      alert("Clustering output:\n" + data.output);
+    } catch (err) {
+      console.error(err);
+      setError("Failed to run clustering. Check server logs.");
+      alert("Error running clustering: " + err.message);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   let traitCounter = 0;
 
   return (
     <div className="min-h-[80vh] flex flex-col items-center">
       <div className="w-full max-w-6xl bg-stone-900 rounded-2xl p-8 shadow-xl">
         <h1 className="text-2xl md:text-3xl font-bold text-center mb-4 animate-fade-in">Artifact Classifier</h1>
-        <div className="text-center max-w-3xl animate-fade-in"><p className="text-stone-400 text-lg max-w-xl mx-auto">
-          FIX ME: Put instructions here.
-        </p></div>
+
+        <hr className="border-t border-stone-600 w-full max-w-2xl my-6" />
 
         {error && <div className="text-center text-red-400 mb-4">{error}</div>}
         {success && <div className="text-center text-emerald-400 mb-4">{success}</div>}
@@ -176,13 +195,32 @@ export default function Classifier() {
               </p>
             )}
 
-            <div className="mt-4 w-full items-center gap-6">
-              <button onClick={handleNewRandomImage} disabled={submitting} className="px-4 py-2 rounded-lg border border-neutral-600 bg-amber-500 text-stone-900 font-semibold hover:scale-105 transition disabled:opacity-60">
-                New Random Image
-              </button>
+            <div className="mt-4 w-full flex flex-col items-center gap-3">
+              <div className="flex gap-6">
+                <button
+                  onClick={handleNewRandomImage}
+                  disabled={submitting}
+                  className="px-4 py-2 rounded-lg border border-neutral-600 bg-amber-500 text-stone-900 font-semibold hover:scale-105 transition disabled:opacity-60"
+                >
+                  New Random Image
+                </button>
 
-              <button onClick={handleSubmit} disabled={submitting || !currentImage} className="px-4 py-2 rounded-lg border border-neutral-600 bg-amber-500 text-stone-900 font-semibold hover:scale-105 transition disabled:opacity-60">
-                {submitting ? "Submitting..." : "Submit Labels"}
+                <button
+                  onClick={handleSubmit}
+                  disabled={submitting || !currentImage}
+                  className="px-4 py-2 rounded-lg border border-neutral-600 bg-amber-500 text-stone-900 font-semibold hover:scale-105 transition disabled:opacity-60"
+                >
+                  {submitting ? "Submitting..." : "Submit Labels"}
+                </button>
+              </div>
+
+              {/* New button to run clustering */}
+              <button
+                onClick={handleRunCluster}
+                disabled={submitting}
+                className="px-4 py-2 rounded-lg border border-neutral-600 bg-emerald-500 text-stone-900 font-semibold hover:scale-105 transition disabled:opacity-60"
+              >
+                Run Clustering Script
               </button>
             </div>
           </div>
@@ -221,6 +259,10 @@ export default function Classifier() {
               <div className="text-center">
                 <h3 className="font-semibold">Output Vector</h3>
                 <div className="mt-2 p-3 rounded-lg text-sm break-all">[{values.map((v) => (v === null ? "_" : v)).join(", ")}]</div>
+              </div>
+
+              <div className="text-center">
+                <Link to="/" className="text-amber-400 hover:text-amber-300 underline">← Back to Home</Link>
               </div>
             </div>
           </div>
